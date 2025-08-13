@@ -1,0 +1,184 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio | André Neves</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Styles/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/aba/logo_aba.ico">
+    <script src="chatbot.js"></script>
+</head>
+<body class="claro">
+
+  <!-- Fundos -->
+  <div class="home_fundo">
+    <div class="fundo-folhas"></div>
+    <div class="fundo-logo"></div>
+</div>
+  <!-- Cabeçalho -->
+  <header class="secao-cabecalho">
+    <div class="menu-navegacao">
+      <img class="logo" src="./assets/cabecalho/logo.svg" alt="Logo" />
+      <nav>
+        <ul class="lista-navegacao">
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#certificados">Certificados</a></li>
+          <li><a href="#feedbacks">Feedbacks</a></li>
+          <li><a href="#contatos">Contatos</a></li>
+          <li><div class="botao-tema" onclick="alternarTema()"></div></li>
+          <div class="linha-separadora"></div>
+        
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="secao-apresentacao">
+      <div class="texto-apresentacao">
+        <section>
+          <h1><span class="titulo_home">“Hello world,”</span></h1>
+          <h2>I’M ANDRÉ NEVES.</h2>
+          <p class="texto_home" style="text-align: justify;"">
+            Apaixonado por tecnologia, criatividade e impacto social. Estudante de Engenharia de Software com foco em soluções que unem lógica e empatia.
+          </p>
+        </section>
+        <div class="redes-sociais">
+          <a href="https://www.linkedin.com/in/andrefneves?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/andrefnevess"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+
+      <div class="foto-perfil">
+        <img src="./assets/home/andre_perfil.svg"  alt="André Neves" />
+      </div>
+    </section>
+    <!-- Seção Sobre -->
+        <section id="trajetoria" class="secao_sobre">
+            <div class="conteudo_sobre">
+              <header>
+                <img class="logo_superior" src="./assets/sobre_mim/logo_superior.svg" alt="Logo Superior">
+              </header>
+                <div class="texto">
+                     <h1 class="titulo_sobre">SOBRE</h1>
+                     <p class="texto_sobre">Sou estudante de <strong class="negrito_sobre">Engenharia de Software</strong> na UNDB e participo do programa Jovem Tech, iniciativa que reúne empresas como Grupo Mateus, Suzano e Porto do Itaqui. Meu interesse por tecnologia começou no ensino médio, durante o desenvolvimento da carga horária do Itinerário Informativo de Matemática, quando participei por 2 (dois) anos consecutivos da <strong class="negrito_sobre">Olimpíada Brasileira de Informática (OBI)</strong> . Foi ali que descobri minha paixão por resolver problemas com lógica e estratégia.</p>
+
+                     <p class="texto_sobre">Durante minha formação, venho desenvolvendo habilidades em <strong class="negrito_sobre">Python</strong>, <strong class="negrito_sobre">C</strong> e <strong class="negrito_sobre">C++</strong>, além de atuar com ferramentas como <strong class="negrito_sobre">Power BI</strong>, <strong class="negrito_sobre">SketchUp</strong>, <strong class="negrito_sobre">V-Ray</strong> e outras ferramentas. Gosto de explorar diferentes áreas da tecnologia, com foco atual em dados, análise e visualização. Me identifico com projetos que unem raciocínio técnico e impacto prático.</p>
+
+                     <p class="texto_sobre">Sou movido por <strong class="negrito_sobre">propósito</strong>, <strong class="negrito_sobre">criatividade</strong> e <strong class="negrito_sobre">curiosidade</strong>. Acredito que a tecnologia tem um papel essencial na transformação de realidades e estou sempre buscando novos aprendizados que contribuam para meu <strong class="negrito_sobre">crescimento pessoal</strong> e <strong class="negrito_sobre">profissional</strong>.</p>
+                </div>
+                <img src="./assets/sobre_mim/celular_imagem.svg" alt="Imagem com efeito 3D">
+            </div>
+            <footer>
+                <img class="logo_inferior" src="./assets/sobre_mim/logo_inferior.svg" alt="Logo Inferior">
+            </footer>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section  id="habilidades" class="secao_habilidades">
+            <h1 class="titulo_habilidades">HABILIDADES</h1>
+            <div class="habilidades_layout">
+                <div class="habilidades_listas">
+                    <div class="habilidades_categoria">
+                        <h2  class="habilidades_t.c" >HARD SKILLS</h2>
+                        <div class="hard_skills">
+                            <div class="skill_icon"><img src="./icones/html.svg" alt="HTML"><span>HTML</span></div>
+                            <div class="skill_icon"><img src="./icones/css.svg" alt="CSS"><span>CSS</span></div>
+                            <div class="skill_icon"><img src="./icones/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                            <div class="skill_icon"><img src="./icones/python.svg" alt="Python"><span>Python</span></div>
+                            <div class="skill_icon"><img src="./icones/c.svg" alt="C"><span>C</span></div>
+                            <div class="skill_icon"><img src="./icones/powerbi.svg" alt="Power BI"><span>Power BI</span></div>
+                            <div class="skill_icon"><img src="./icones/github.svg" alt="GitHub"><span>GitHub</span></div>
+                            <div class="skill_icon"><img src="./icones/sketchup.svg" alt="SketchUp"><span>SketchUp</span></div>
+                            <div class="skill_icon"><img src="./icones/vray.svg" alt="V-Ray"><span>V-Ray</span></div>
+                            <div class="skill_icon"><img src="./icones/canva.svg" alt="Canva"><span>Canva</span></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades_categoria">
+                        <h2 class="habilidades_t.c">SOFT SKILLS</h2>
+                        <div class="soft_skills">
+                            <span>Criatividade</span>
+                            <span>Trabalho em equipe</span>
+                            <span>Organização</span>
+                            <span>Inteligência emocional</span>
+                            <span>Comunicação assertiva</span>
+                            <span>Proatividade</span>
+                            <span>Resolução de problemas</span>
+                            <span>Adaptabilidade</span>
+                            <span>Empatia</span>
+                            <span>Pensamento crítico</span>
+                            <span>Resiliência</span>
+                            <span>Liderança jovem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habilidades_imagem">
+                    <img src="./fotos/habilidades/foto_apresentacao.jpg" alt="Apresentação">
+                </div>
+            </div>
+        </section>
+
+         <!-- Seção Habilidades -->
+        <section id="projetos" class="secao_projetos">
+            <h1 class="titulo_projetos">PROJETOS</h1>
+            <div class="habilidades_layout">
+                <div class="projeto_listas">
+                    <div class="habilidades_categoria">
+                        <h2>HARD SKILLS</h2>
+                        <div class="hard_skills">
+                            <div class="skill_icon"><img src="./icones/html.svg" alt="HTML"><span>HTML</span></div>
+                            <div class="skill_icon"><img src="./icones/css.svg" alt="CSS"><span>CSS</span></div>
+                            <div class="skill_icon"><img src="./icones/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                            <div class="skill_icon"><img src="./icones/python.svg" alt="Python"><span>Python</span></div>
+                            <div class="skill_icon"><img src="./icones/c.svg" alt="C"><span>C</span></div>
+                            <div class="skill_icon"><img src="./icones/powerbi.svg" alt="Power BI"><span>Power BI</span></div>
+                            <div class="skill_icon"><img src="./icones/github.svg" alt="GitHub"><span>GitHub</span></div>
+                            <div class="skill_icon"><img src="./icones/sketchup.svg" alt="SketchUp"><span>SketchUp</span></div>
+                            <div class="skill_icon"><img src="./icones/vray.svg" alt="V-Ray"><span>V-Ray</span></div>
+                            <div class="skill_icon"><img src="./icones/canva.svg" alt="Canva"><span>Canva</span></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades_categoria">
+                        <h2>SOFT SKILLS</h2>
+                        <div class="soft_skills">
+                            <span>Criatividade</span>
+                            <span>Trabalho em equipe</span>
+                            <span>Organização</span>
+                            <span>Inteligência emocional</span>
+                            <span>Comunicação assertiva</span>
+                            <span>Proatividade</span>
+                            <span>Resolução de problemas</span>
+                            <span>Adaptabilidade</span>
+                            <span>Empatia</span>
+                            <span>Pensamento crítico</span>
+                            <span>Resiliência</span>
+                            <span>Liderança jovem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habilidades_imagem">
+                    <img src="./fotos/habilidades/foto_apresentacao.jpg" alt="Apresentação">
+                </div>
+            </div>
+        </section>
+
+
+
+
+  </main>
+
+  <script>
+    function alternarTema() {
+      document.body.classList.toggle('escuro');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap');
+
+/* Variáveis de cor */
+:root {
+  --cor-fundo-claro: #ffffff;
+  --cor-fundo-escuro: #014626;
+  --cor-texto-escuro: #ffffff;
+  --cor-destaque: #00aa55;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes flutuar {
+  0% {
+    top: 0;
+  } 100% {
+    top: 30px;
+  }
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: "Lato", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.escuro {
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-escuro);
+}
+
+/* Fundo geral */
+
+.home_fundo{
+  align-items: center;
+}
+/* Fundo com folhas */
+.fundo-folhas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/home/folhas.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Fundo com logos */
+.fundo-logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-image: url('../assets/home/logo_de_fundo\ .svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right bottom;
+  z-index: -3;
+  opacity: 0.5;
+}
+
+.linha-separadora {
+  width: 100%;
+  height: 2px;
+  background-color: white; /* ou a cor que você usou no protótipo */
+  border-radius: 12px; /* ou 50% se quiser circular */
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.secao-cabecalho {
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menu-navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-navegacao {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.lista-navegacao a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.botao-tema {
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body.escuro .botao-tema {
+  background-color: #ccc;
+}
+
+body.escuro .lista-navegacao a {
+  color: var(--cor-texto-escuro);
+}
+
+/* Logo */
+.logo {
+  max-width: clamp(50px, 10vw, 75px);
+  height: auto;
+}
+
+/* Apresentação */
+.secao-apresentacao {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30px 60px;
+}
+
+.texto-apresentacao {
+  flex: 1;
+  max-width: 600px;
+}
+
+.texto-apresentacao h1 {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.5rem;
+ 
+  color: #00d596;
+}
+
+/* Efeito de digitação para "Hello world," */
+.titulo_home {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00d596; /* cor do cursor */
+  font-family: 'Libertinus Serif', serif;
+  font-weight: 600;
+  font-size: 90px;
+
+  /* animações */
+  animation: typing 2s steps(12) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 12ch; } /* 12 caracteres = "Hello world," */
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: #00d596; }
+  25%, 75% { border-color: transparent; }
+}
+
+
+.texto-apresentacao h2 {
+  font-size: 2rem;
+  margin-bottom: 0.7em;
+}
+
+h1, h2 {
+    margin-bottom: 0; /* ou 0 se quiser colado */
+}
+
+h2 {
+    margin-top: 0; /* remove espaço extra acima */
+}
+
+.texto-apresentacao p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+  right: 15px;
+}
+
+.titulo_home {
+  color: var(--cor-destaque);
+}
+
+.texto_home{
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.redes-sociais:hover {
+    background: transparent;
+    color: var(--cor-destaque);
+    box-shadow: none;
+}
+
+.redes-sociais{
+    margin-left: 2rem;
+}
+
+.redes-sociais a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: .2rem solid var(--cor-destaque);
+    border-radius: 5%;
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    text-decoration: none;
+    transition: .5s;
+    
+}
+
+
+.redes-sociais a:hover {
+    background: var(--cor-destaque);
+    color: var(--cor-fundo-escuro);
+    box-shadow: 0 0 1rem var(--cor-destaque);
+}
+
+/* Foto lateral */
+.foto-perfil {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: flutuar 2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.foto-perfil img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  transform: translateY(-30px); 
+}
+
+
+
+/* Responsividade */
+
+/* Notebook (≤ 1200px) */
+@media (max-width: 1200px) {
+  .texto-apresentacao h1 {
+    font-size: 2rem;
+  }
+
+  .foto-perfil img {
+    max-width: 350px;
+  }
+}
+
+/* Tablet (≤ 990px) */
+@media (max-width: 990px) {
+  .menu-navegacao {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .secao-apresentacao {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* Celular (≤ 770px) */
+@media (max-width: 770px) {
+  .texto-apresentacao h1 {
+    font-size: 1.5rem;
+  }
+
+  .foto-perfil img {
+    max-width: 280px;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .lista-navegacao {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Mini Celular (≤ 640px) */
+@media (max-width: 640px) {
+  .secao-cabecalho {
+    padding: 10px;
+  }
+
+  .texto-apresentacao {
+    text-align: center;
+  }
+
+  .foto-perfil img {
+    min-width: 100px;
+  }
+}
+
+
+/* Seção Sobre Mim */
+
+body {
+    background-color: #014626; 
+}
+
+/* Logo Superior */
+
+header {
+    position: relative;
+}
+
+.logo_superior {
+    position: absolute;
+    top: 0;
+    right: 30px; /* valor negativo faz "invadir" */
+    width: 600px; /* tamanho ajustado */
+    max-width: none; /* remove limite */
+}
+
+/* Seção Sobre */
+.secao_sobre {
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.titulo_sobre {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-radius: 2px;
+}
+
+.conteudo_sobre {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+}
+
+.texto_sobre {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px; /* <-- adiciona espaço entre parágrafos */
+}
+
+.negrito_sobre {
+    color: #55DE16;
+}
+
+.conteudo_sobre img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.logo_inferior {
+    position: relative;
+    bottom: 0;
+    left: 700px; /* valor negativo faz "invadir" */
+    width: 700px; /* tamanho ajustado */
+    max-width: none;
+}
+
+.redes-sociais i{
+  color: white;
+  
+}
+
+/* Seção Habilidades */
+.secao_habilidades {
+    padding: 40px;
+    color: white;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.titulo_habilidades {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.habilidades_layout {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.habilidades_listas {
+    flex: 1 1 60%;
+}
+
+.habilidades_categoria h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 3px;
+    border-radius: 2px;
+}
+
+.hard_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.skill_icon {
+    background-color: #55DE16;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill_icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.skill_icon span {
+    font-size: 12px;
+    color: white;
+    margin-top: 5px;
+}
+
+.soft_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.soft_skills span {
+    background-color: #55DE16;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    color: white;
+}
+
+.habilidades_imagem {
+    flex: 1 1 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.habilidades_imagem img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50% / 35%;
+    object-fit: cover;
+}
+
+/* CHATBOT*/
+
+/* Ícone fixo do chatbot */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #55DE16;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
+
+/* Caixa do chatbot escondida */
+#chatbot-box {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  width: 350px;
+  max-height: 400px;
+  background-color: #013D22;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+  display: none;
+  flex-direction: column;
+  color: white;
+  font-family: "Lato", sans-serif;
+  z-index: 10001;
+}
+
+/* Cabeçalho da caixinha */
+#chatbot-header {
+  background-color: #55DE16;
+  color: white;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+#chatbot-close {
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Área de mensagens */
+#chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Input e botão enviar */
+#chatbot-input-area {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+#chatbot-send {
+  background-color: #55DE16;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Modo claro */
+body.light-mode {
+  background-color: white !important;
+  color: #014626 !important;
+}
+
+body.light-mode .negrito_sobre,
+body.light-mode .skill_icon,
+body.light-mode .soft_skills span,
+body.light-mode #chatbot-icon,
+body.light-mode #chatbot-header,
+body.light-mode .titulo_sobre,
+body.light-mode .titulo_habilidades,
+body.light-mode .habilidades_categoria h2,
+body.light-mode .texto_sobre {
+  background-color: white !important;
+  color: #014626 !important;
+  border-color: #014626 !important;
+}
+
+body.light-mode .logo_superior,
+body.light-mode .logo_inferior {
+  filter: invert(100%);
+}
+
+body.light-mode .texto_sobre,
+body.light-mode .titulo_sobre,
+body.light-mode .titulo_habilidades,
+body.light-mode .habilidades_categoria h2 {
+  color: #014626 !important;
+}
