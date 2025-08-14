@@ -3,7 +3,6 @@
 
 /* Variáveis de cor */
 :root {
-  --cor-fundo-claro: #ffffff;
   --cor-fundo-escuro: #014626;
   --cor-texto-escuro: #ffffff;
   --cor-destaque: #00aa55;
@@ -34,10 +33,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-body.escuro {
-  background-color: var(--cor-fundo-escuro);
-  color: var(--cor-texto-escuro);
-}
+
 
 /* Fundo geral */
 
@@ -102,26 +98,18 @@ body.escuro {
   gap: 25px;
 }
 
+.lista-navegacao a:hover {
+    background: transparent;
+    color: var(--cor-destaque);
+    box-shadow: none;
+
+}
+
 .lista-navegacao a {
   text-decoration: none;
-  color: inherit;
+  color: white;
   font-weight: bold;
-}
-
-.botao-tema {
-  width: 20px;
-  height: 20px;
-  background-color: #666;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-body.escuro .botao-tema {
-  background-color: #ccc;
-}
-
-body.escuro .lista-navegacao a {
-  color: var(--cor-texto-escuro);
+  transition: color 0.3s;
 }
 
 /* Logo */
@@ -140,7 +128,7 @@ body.escuro .lista-navegacao a {
 
 .texto-apresentacao {
   flex: 1;
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .texto-apresentacao h1 {
@@ -176,10 +164,23 @@ body.escuro .lista-navegacao a {
   25%, 75% { border-color: transparent; }
 }
 
+.texto-apresentacao h1,
+.texto-apresentacao h2 {
+    display: block;
+    margin: 0px;
+    line-height: 1; /* ajusta a distância entre as linhas */
+}
+.texto-apresentacao {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* espaço entre eles */
+    margin:0px 0px 0px 0px;
+}
 
 .texto-apresentacao h2 {
   font-size: 2rem;
   margin-bottom: 0.7em;
+   padding-left: 35px;
 }
 
 h1, h2 {
@@ -201,9 +202,14 @@ h2 {
   color: var(--cor-destaque);
 }
 
+h2 {
+  color: white;
+  left: 30px;
+}
 .texto_home{
   font-family: "Lato", sans-serif;
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: white;
 }
 
 .redes-sociais {
@@ -212,7 +218,8 @@ h2 {
     margin-top: 10px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 150px;
+    padding-left: 25px;
 }
 
 .redes-sociais:hover {
