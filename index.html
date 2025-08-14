@@ -20,7 +20,9 @@
   <!-- Cabeçalho -->
   <header class="secao-cabecalho">
     <div class="menu-navegacao">
-      <img class="logo" src="./assets/cabecalho/logo.svg" alt="Logo" />
+      <a href="/">
+        <img class="logo" src="./assets/cabecalho/logo.svg" alt="Logo" onclick="location.reload()" style="cursor:pointer;"/>
+      </a>
       <nav>
         <ul class="lista-navegacao">
           <li><a href="#trajetoria">Trajetória</a></li>
@@ -41,7 +43,7 @@
     <section class="secao-apresentacao">
       <div class="texto-apresentacao">
         <section>
-          <h1><span class="titulo_home">“Hello world,”</span></h1>
+          <h1><span class="titulo_home"><strong>“Hello world,”</strong></span></h1>
           <h2>I’M ANDRÉ NEVES.</h2>
           <p class="texto_home" style="text-align: justify;"">
             Apaixonado por tecnologia, criatividade e impacto social. Estudante de Engenharia de Software com foco em soluções que unem lógica e empatia.
@@ -118,13 +120,15 @@
                     </div>
                 </div>
 
-                <div class="habilidades_imagem">
-                    <img src="./fotos/habilidades/foto_apresentacao.jpg" alt="Apresentação">
-                </div>
+                <section id="portfolio-video"> 
+                  <video class="meu_video" width="640" height="360" controls autoplay muted loop>
+                    <source src="videos/meu-video.mp4" type="video/mp4">
+                  </video>
+                </section>
             </div>
         </section>
 
-         <!-- Seção Habilidades -->
+         <!-- Seção Projetos -->
         <section id="projetos" class="secao_projetos">
             <h1 class="titulo_projetos">PROJETOS</h1>
             <div class="habilidades_layout">

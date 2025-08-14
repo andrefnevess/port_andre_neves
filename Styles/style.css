@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden
 }
 
 @keyframes flutuar {
@@ -135,7 +136,7 @@ body {
   font-family: "Libertinus Serif", serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
  
   color: #00d596;
 }
@@ -147,7 +148,7 @@ body {
   white-space: nowrap;
   border-right: 2px solid #00d596; /* cor do cursor */
   font-family: 'Libertinus Serif', serif;
-  font-weight: 600;
+  font-weight: 1000;
   font-size: 90px;
 
   /* animações */
@@ -178,7 +179,7 @@ body {
 }
 
 .texto-apresentacao h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 0.7em;
    padding-left: 35px;
 }
@@ -413,6 +414,19 @@ header {
 }
 
 /* Seção Habilidades */
+
+.meu_video {
+  border-radius: 50%;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #ff6a00, #ee0979) 1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  object-fit: cover;
+  width: 400px;
+  height: 250px;
+  transition: transform 0.3s ease;
+}
+
+
 .secao_habilidades {
     padding: 40px;
     color: white;
