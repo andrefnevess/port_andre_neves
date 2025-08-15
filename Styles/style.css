@@ -426,6 +426,19 @@ header {
   transition: transform 0.3s ease;
 }
 
+.logo_lateral_habilidades {
+  position: relative; /* fica preso na tela */
+  bottom: 0;
+  right: 0;
+  width: 200px; /* tamanho fixo pra manter proporção */
+  height: auto;
+  background-image: url('../assets/habilidades/logo_lateral_habilidades.svg');
+  background-repeat: no-repeat;
+  background-size: contain; /* mantém a proporção sem cortar */
+  background-position: bottom right;
+  opacity: 0.3;
+  pointer-events: none; /* não atrapalha cliques */
+}
 
 .secao_habilidades {
     padding: 40px;
