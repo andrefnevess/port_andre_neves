@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=League+Spartan:wght@100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap');
 
 /* Variáveis de cor */
@@ -299,42 +299,6 @@ h2 {
   }
 }
 
-/* Celular (≤ 770px) */
-@media (max-width: 770px) {
-  .texto-apresentacao h1 {
-    font-size: 1.5rem;
-  }
-
-  .foto-perfil img {
-    max-width: 280px;
-  }
-
-  .logo {
-    max-width: 100px;
-  }
-
-  .lista-navegacao {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-/* Mini Celular (≤ 640px) */
-@media (max-width: 640px) {
-  .secao-cabecalho {
-    padding: 10px;
-  }
-
-  .texto-apresentacao {
-    text-align: center;
-  }
-
-  .foto-perfil img {
-    min-width: 100px;
-  }
-}
-
-
 /* Seção Sobre Mim */
 
 body {
@@ -426,19 +390,6 @@ header {
   transition: transform 0.3s ease;
 }
 
-.logo_lateral_habilidades {
-  position: relative; /* fica preso na tela */
-  bottom: 0;
-  right: 0;
-  width: 200px; /* tamanho fixo pra manter proporção */
-  height: auto;
-  background-image: url('../assets/habilidades/logo_lateral_habilidades.svg');
-  background-repeat: no-repeat;
-  background-size: contain; /* mantém a proporção sem cortar */
-  background-position: bottom right;
-  opacity: 0.3;
-  pointer-events: none; /* não atrapalha cliques */
-}
 
 .secao_habilidades {
     padding: 40px;
@@ -537,124 +488,177 @@ header {
     object-fit: cover;
 }
 
-/* CHATBOT*/
 
-/* Ícone fixo do chatbot */
-#chatbot-icon {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #55DE16;
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 28px;
+/* ================= PROJETOS ================= */
+#projetos {
+  padding: 80px 10%;
+  background: var(--cor-fundo-escuro);
+  color: var(--cor-texto-escuro);
+  text-align: center;
+}
+
+#projetos {
+  position: relative; /* mantém a seção no fluxo normal */
+  padding: 80px 10%;
+  color: var(--cor-texto-escuro);
+  overflow: hidden; /* garante que o fundo não vaze */
+}
+
+#projetos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/projetos/fundo_projetos.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* controla a transparência */
+  z-index: -1; /* joga para trás do conteúdo */
+}
+
+
+#projetos h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: var(--cor-texto-escuro);
+}
+
+.projetos-botoes {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  flex-direction: column; /* coluna */
+  align-items: flex-start; /* joga os botões para a esquerda */
+  gap: 20px;
+  max-width: 600px;
+  margin: 0;
+}
+
+.btn-projeto {
+  display: block;
+  width: 100%; /* todos do mesmo tamanho */
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: var(--cor-destaque);
+  color: var(--cor-texto-escuro);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center; /* centraliza o texto dentro do botão */
+  transition: all 0.3s ease;
+}
+
+.btn-projeto:hover {
+  background: #55DE16;
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* ================= FEEDBACKS ================= */
+#feedbacks {
+  padding: 80px 10%;
+  background: #01331d; /* tom ainda mais escuro p/ contraste */
+  color: var(--cor-texto-escuro);
+}
+
+#feedbacks h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--cor-texto-escuro);
+}
+
+.grid-feedbacks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.feedback-card {
+  background: rgba(0, 170, 85, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  font-style: italic;
+  border: 1px solid var(--cor-destaque);
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  z-index: 10000;
 }
 
-/* Caixa do chatbot escondida */
-#chatbot-box {
-  position: fixed;
-  bottom: 80px;
-  left: 20px;
-  width: 350px;
-  max-height: 400px;
-  background-color: #013D22;
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
-  display: none;
+.feedback-card span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--cor-destaque);
+}
+
+/* ================= CONTATO ================= */
+#contato {
+  padding: 80px 10%;
+  background: var(--cor-fundo-escuro);
+  color: var(--cor-texto-escuro);
+  text-align: center;
+}
+
+#contato h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#contato p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+#contato form {
+  margin-top: 20px;
+  display: flex;
   flex-direction: column;
-  color: white;
-  font-family: "Lato", sans-serif;
-  z-index: 10001;
+  gap: 15px;
+  max-width: 500px;
+  margin-inline: auto;
 }
 
-/* Cabeçalho da caixinha */
-#chatbot-header {
-  background-color: #55DE16;
-  color: white;
-  padding: 10px 15px;
-  font-weight: 700;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px 8px 0 0;
-}
-
-#chatbot-close {
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-}
-
-/* Área de mensagens */
-#chatbot-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-/* Input e botão enviar */
-#chatbot-input-area {
-  display: flex;
-  padding: 10px;
-  gap: 10px;
-}
-
-#chatbot-input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  font-size: 14px;
+#contato input, 
+#contato textarea {
+  padding: 12px;
+  border: 2px solid var(--cor-destaque);
+  border-radius: 8px;
   outline: none;
+  font-family: "Lato", sans-serif;
+  background: #01331d;
+  color: var(--cor-texto-escuro);
 }
 
-#chatbot-send {
-  background-color: #55DE16;
+#contato input::placeholder,
+#contato textarea::placeholder {
+  color: #cccccc;
+}
+
+#contato button {
+  padding: 12px;
   border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: 700;
+  border-radius: 8px;
+  background: var(--cor-destaque);
+  color: var(--cor-fundo-escuro);
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Modo claro */
-body.light-mode {
-  background-color: white !important;
-  color: #014626 !important;
+#contato button:hover {
+  background: #55DE16;
+  transform: scale(1.05);
 }
 
-body.light-mode .negrito_sobre,
-body.light-mode .skill_icon,
-body.light-mode .soft_skills span,
-body.light-mode #chatbot-icon,
-body.light-mode #chatbot-header,
-body.light-mode .titulo_sobre,
-body.light-mode .titulo_habilidades,
-body.light-mode .habilidades_categoria h2,
-body.light-mode .texto_sobre {
-  background-color: white !important;
-  color: #014626 !important;
-  border-color: #014626 !important;
-}
-
-body.light-mode .logo_superior,
-body.light-mode .logo_inferior {
-  filter: invert(100%);
-}
-
-body.light-mode .texto_sobre,
-body.light-mode .titulo_sobre,
-body.light-mode .titulo_habilidades,
-body.light-mode .habilidades_categoria h2 {
-  color: #014626 !important;
+/* ================= FOOTER ================= */
+footer {
+  background: #012d19;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
 }
