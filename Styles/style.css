@@ -603,12 +603,11 @@ header {
 /* ================= FEEDBACKS ================= */
 #feedbacks {
   padding: 80px 10%;
-  background: var(--cor-fundo-escuro);
   color: var(--cor-texto-escuro);
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   gap: 90px;
   position: relative;
   overflow: hidden;
@@ -618,12 +617,19 @@ header {
 #feedbacks::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 20px; /* distância da borda direita */
-  width: auto; /* largura ajusta proporcionalmente */
-  height: 100%; /* ocupa toda a altura da seção */
-  background: url("../assets/feedbacks/logo_feedbacks.svg") no-repeat center/contain;
-  pointer-events: none;
+  top: 50%; /* centraliza verticalmente */
+  right: -200px; /* metade do tamanho (700px / 2) fora da tela */
+  transform: translateY(-50%); /* ajusta certinho no meio */
+  width: 700px;
+  height: 700px;
+  background-image: url('../assets/feedbacks/logo_feedbacks.svg');
+  background-repeat: no-repeat;
+  background-size: contain; /* mantém proporção certinha */
+  background-position: center;
+  opacity: 0.5;
+  z-index: -5;
+
+
 }
 
 
