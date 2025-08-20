@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=League+Spartan:wght@100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap');
+
+/* Variáveis */
+:root {
+  --verde-escuro: #014626;
+  --verde-claro: #00aa55;
+  --verde-gradiente: linear-gradient(135deg, #014626, #00aa55);
+
+  --texto-claro: #f0fdf4;
+  --texto-secundario: #a7f3d0;
+
+  --cor-destaque: #55DE16; 
+  --cor-fundo-escuro: #014626; 
+  --cor-texto-escuro: #ffffff; 
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--texto-claro);
+  background-color: var(--cor-fundo-escuro);
+  overflow-x: hidden;
+}
+
+#projetos {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#projetos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/alura_projetos/alura_fundo_projetos.svg');
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 30px 20px 20px;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.back:hover {
+  color: var(--cor-destaque);
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--cor-texto-escuro);
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  display: inline-block;
+  position: relative;
+  color: var(--texto-secundario);
+}
+
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 2px;
+  background: var(--texto-secundario);
+}
+
+h2::before {
+  left: -130px;
+}
+
+h2::after {
+  right: -130px;
+}
+
+/* ========= GALERIA ========= */
+#galeria {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--texto-claro);
+}
+
+#galeria .title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--cor-texto-escuro);
+}
+
+#galeria .muted {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+#galeria .badge {
+  background: var(--cor-destaque);
+  color: var(--cor-texto-escuro);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* input */
+#galeria .input {
+  margin-top: 10px;
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--verde-claro);
+  background: var(--texto-claro);
+  color: var(--verde-escuro);
+  cursor: pointer;
+}
+
+/* botão Início */
+#galeria .cta {
+  margin-top: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--cor-destaque);
+  color: var(--cor-texto-escuro);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#galeria .cta:hover {
+  background: var(--verde-gradiente);
+  transform: scale(1.05);
+}
+
+/* carrossel da galeria */
+#galeria .carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+#galeria .track {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.3s ease;
+}
+
+#galeria .track img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--verde-claro);
+}
+
+/* botões do carrossel */
+#galeria .prev, 
+#galeria .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--texto-claro);
+  color: var(--verde-escuro);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#galeria .prev:hover, 
+#galeria .next:hover {
+  background: var(--cor-destaque);
+  color: var(--cor-texto-escuro);
+  transform: scale(1.1);
+}
+
+#galeria .prev {
+  left: 10px;
+}
+
+#galeria .next {
+  right: 10px;
+}
+
+/* ========= CARDS ========= */
+.cards-container {
+  display: flex; /* cards em linha */
+  flex-wrap: wrap; /* quebra linha se necessário */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.card {
+  background: #006633;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 250px; /* largura maior */
+  height: 350px; /* altura maior */
+  text-align: center;
+  border: 2px solid white;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui conteúdo verticalmente */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  background-size: cover;
+  background-position: center;
+  height: 180px; /* altura maior da imagem */
+  border-bottom: 2px solid white;
+}
+
+.card-content {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* mantém título, descrição e ícones bem distribuídos */
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--texto-claro);
+}
+
+.card-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+.card-icons a {
+  color: white;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.card-icons a:hover {
+  color: var(--cor-destaque);
+  transform: scale(1.2);
+}
