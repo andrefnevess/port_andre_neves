@@ -381,13 +381,7 @@ header {
     max-width: 300px;
 }
 
-.logo_inferior {
-    position: relative;
-    bottom: 0;
-    left: 700px; /* valor negativo faz "invadir" */
-    width: 700px; /* tamanho ajustado */
-    max-width: none;
-}
+
 
 .redes-sociais i{
   color: white;
@@ -581,7 +575,7 @@ header {
 .btn-projeto {
   display: block;
   width: 100%;
-  padding: 15px 50px;
+  padding: 15px 40px;
   border-radius: 10px;
   background: #017420;
   color: var(--cor-texto-escuro);
@@ -791,7 +785,7 @@ header {
 
 
 footer {
-  background: var(--verde-escuro);
+  background: #046739;
   color: var(--texto-claro);
   font-family: 'Poppins', sans-serif;
   position: relative;
@@ -827,7 +821,7 @@ footer h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  background: var(--verde-gradiente);
+  background: var(--verde-claro);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s;
@@ -885,6 +879,7 @@ footer .social-icons {
   margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
+  border-bottom: none;
 }
 
 footer .social-icons a {
@@ -901,6 +896,7 @@ footer .social-icons a {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 footer .social-icons a::before {
