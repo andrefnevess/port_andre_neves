@@ -277,9 +277,10 @@ h2::after {
 
 .card-content p {
     font-family: "Lato", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   margin-bottom: 10px;
   color: var(--texto-claro);
+  text-align: justify;
 }
 
 .card-icons {
