@@ -342,6 +342,7 @@ header {
     max-width: 1200px;
     margin: auto;
     position: relative;
+    margin-top: 120px; /* altura aproximada do header + logo */
 }
 
 .titulo_sobre {
@@ -384,18 +385,19 @@ header {
 
 
 .redes-sociais i{
-  color: white;
+  color: rgb(255, 255, 255);
   
 }
 
 
 /* Seção Habilidades */
 .secao_habilidades {
-  padding: 40px 0px;
+  padding: 40px 40px;
   color: white;
   width: 100vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imagem-esquerda-conteudo {
@@ -443,6 +445,7 @@ header {
   display: inline-block;
   padding-bottom: 3px;
 }
+
 
 /* Hard Skills em grid */
 .hard_skills {
@@ -933,15 +936,226 @@ footer .footer-bottom {
   z-index: 1;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  footer .container {
-    grid-template-columns: 1fr;
+/* Responsividade */
+/* ================= MENU HAMBURGUER (até 664px) ================= */
+@media (max-width: 664px) {
+
+/* ===== APRESENTAÇÃO ===== */
+  .secao-apresentacao {
+    display: flex;
+    flex-direction: column; /* força coluna */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    
+  }
+
+   .texto-apresentacao {
+    order: 1; /* texto vem primeiro */
+    width: 100%; /* garante que ocupe toda a largura */
+  }
+
+  .texto-apresentacao h1,
+  .titulo_home {
+    font-size: 3rem; /* reduz título */
+    line-height: 1.2;
+    border-right: 1px solid #00d596;
+    align-items: flex-start; /* alinha itens à esquerda */
+    text-align: left;        /* texto alinhado à esquerda */
+  }
+
+  .texto-apresentacao h2 {
+    font-size: 1.4rem;
+    padding-left: 0;
+    align-items: flex-start; /* alinha itens à esquerda */
+    text-align: left;        /* texto alinhado à esquerda */
+  }
+
+  .texto-apresentacao p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  /* ===== FOTO PERFIL ===== */
+  .foto-perfil img {
+    max-width: 150px; /* menor no mobile */
+    margin: 20px auto;
+    transform: none;
+    align-self: center; /* mantém a foto centralizada */
+  }
+
+  .foto-perfil {
+    order: 2; /* imagem vem depois */
+    margin-top: 20px;
+  }
+
+  /* ===== REDES SOCIAIS ===== */
+  .redes-sociais {
+    position: static;
+    margin: 15px 0 0 0;          /* sem auto → gruda à esquerda */
+    display: flex;               /* garante flexbox */
+    justify-content: flex-start; /* joga para a esquerda */
+    align-items: center;         /* mantém centralização vertical */
+    text-align: left;
+  }
+  .redes-sociais a {
+    width: 40px;   /* antes 50px */
+    height: 40px;  /* antes 50px */
+    font-size: 1.5rem; /* antes 2rem */
+  }
+}
+
+
+@media (max-width: 664px) {
+  .secao_sobre {
+    padding: 20px;
+    margin-top: 60px; /* menos espaço no mobile */
+  }
+
+  .titulo_sobre {
+    font-size: 48px;       /* título menor */
+    text-align: center;    /* centralizado */
+    display: block;        /* ocupa a linha toda */
+    border-bottom: none;   /* remove linha, se quiser simplificar */
+    margin-bottom: 15px;
+  }
+
+  .conteudo_sobre {
+    flex-direction: column;  /* empilha texto e imagem */
+    gap: 20px;
+    text-align: left;        /* texto alinhado à esquerda */
+  }
+
+  .conteudo_sobre img {
+    max-width: 180px;        /* imagem menor */
+    margin: 0 auto;          /* centralizada */
+    order: 1;
+  }
+
+  .texto_sobre {
+    font-size: 0.95rem;      /* reduz tamanho da fonte */
+    line-height: 1.5;
+    order: 2;
+  }
+}
+
+@media (max-width: 664px) {
+  .secao_habilidades {
+    flex-direction: column; /* empilha conteúdo */
+    padding: 20px;
+    align-items: center;
+  }
+
+  .titulo_habilidades {
+    font-size: 48px; /* menor no mobile */
+    margin-bottom: 20px;
     text-align: center;
   }
 
-  footer .social-icons {
-    justify-content: center;
+  .habilidades_layout {
+    flex-direction: column; /* listas primeiro, imagem depois */
+    gap: 30px;
+    align-items: center;
+  }
+
+  .habilidades_listas {
+    width: 100%; /* ocupa toda a largura */
+  }
+
+  .hard_skills {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+    gap: 15px;
+  }
+
+  .skill_icon {
+    padding: 10px;
+    color: #01331d;
+  }
+
+  .skill_icon i {
+    font-size: 24px; /* ícones menores */
+  }
+
+  .skill_icon span {
+    font-size: 12px;
+  }
+
+  .soft_skills {
+    justify-content: center; /* centraliza as tags */
+    gap: 8px;
+    color: #01331d;
+  }
+
+  .soft_skills span {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+   .soft_skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 colunas */
+    gap: 10px;
+    width: 100%;
+  }
+
+  .soft_skills span {
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .habilidades_imagem {
+    order: 2; /* imagem depois da lista */
+    margin-top: 20px;
+  }
+
+  .habilidades_imagem img {
+    max-width: 180px; /* menor no celular */
+  }
+
+  .imagem-esquerda-conteudo {
+    display: none; /* oculta imagem no mobile */
+  }
+}
+
+@media (max-width: 664px) {
+  #projetos {
+    padding: 40px 20px;
+    height: auto; /* altura flexível no mobile */
+  }
+
+  #projetos h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .projetos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .imagem_colagem {
+    order: 1;            /* imagem vem primeiro */
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 20px; /* espaço entre imagem e botões */
+  }
+
+  .projetos-botoes {
+    order: 2;            /* botões depois */
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-projeto {
+    font-size: 1rem;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 280px;
+    white-space: nowrap; /* impede quebra de linha */
   }
 }
 
@@ -952,5 +1166,4 @@ footer .footer-bottom {
 position: absolute;
 pointer-events: none;
 transition: transform 0.1s ease;
-
 }
