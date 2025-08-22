@@ -936,7 +936,39 @@ footer .footer-bottom {
   z-index: 1;
 }
 
+
 /* Responsividade */
+
+@media (max-width: 768px) {
+  .lista-navegacao {
+    position: fixed;
+    top: 0;
+    right: -260px; /* começa mais para fora */
+    width: 260px; /* aumenta a largura do menu */
+    height: 100vh;
+    background: var(--verde-escuro);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 25px;
+    gap: 25px; /* aumenta o espaço entre os itens */
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .lista-navegacao.show {
+    right: 0;
+  }
+
+  #menu-icon {
+    display: block;
+    font-size: 34px; /* um pouco maior */
+    margin-left: auto; /* joga ele pra direita */
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+  }
+}
+
 /* ================= MENU HAMBURGUER (até 664px) ================= */
 @media (max-width: 664px) {
 
@@ -1002,6 +1034,36 @@ footer .footer-bottom {
     width: 40px;   /* antes 50px */
     height: 40px;  /* antes 50px */
     font-size: 1.5rem; /* antes 2rem */
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 664px) {
+  .lista-navegacao {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Escondido */
+    width: 250px;
+    height: 100vh;
+    background: var(--verde-escuro);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .lista-navegacao.show {
+    right: 0; /* Abre o menu */
+  }
+
+  #menu-icon {
+    display: block;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
   }
 }
 
