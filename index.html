@@ -31,25 +31,28 @@
   </div>
   <!-- Cabeçalho -->
   <header class="secao-cabecalho">
-    <div class="menu-navegacao">
-      <a href="/">
-        <img class="logo" src="./assets/cabecalho/logo.svg" alt="Logo" onclick="location.reload()"
-          style="cursor:pointer;" />
-      </a>
-      <nav>
-        <ul class="lista-navegacao">
-          <li><a href="#trajetoria">Trajetória</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#feedbacks">Feedbacks</a></li>
-          <li><a href="#contato">Contatos</a></li>
-          <li>
-            <div class="botao-tema" onclick="alternarTema()"></div>
-          </li>
-          <div class="linha-separadora"></div>
+      <div class="menu-navegacao">
+        <a href="/">
+          <img class="logo" src="./assets/cabecalho/logo.svg" alt="Logo" onclick="location.reload()" style="cursor:pointer;" />
+        </a>
 
-      </nav>
-    </div>
+        <!-- Ícone do menu (só aparece no mobile) -->
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav>
+          <ul class="lista-navegacao" id="navLinks">
+            <li><a href="#trajetoria">Trajetória</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#feedbacks">Feedbacks</a></li>
+            <li><a href="#contato">Contatos</a></li>
+            <li>
+              <div class="botao-tema" onclick="alternarTema()"></div>
+            </li>
+            <div class="linha-separadora"></div>
+          </ul>
+        </nav>
+      </div>
   </header>
 
 
@@ -243,7 +246,7 @@
         Respondo o mais rápido possível.
       </p>
 
-      <form id="contact-form" class="form-contato" method="POST" action="https://formspree.io/f/mkgzdbne" novalidate>
+       <form id="contact-form" class="form-contato" method="POST" action="https://formspree.io/f/mkgzdbne" novalidate>
                 <input class="form-contato__input" type="text" name="nome" placeholder="Seu nome" required>
                 <input class="form-contato__input" type="email" name="email" placeholder="Seu e-mail" required>
                 <input class="form-contato__input" type="tel" name="whatsapp" placeholder="Seu WhatsApp (Opcional)">
@@ -306,8 +309,7 @@
 
 
   </main>
-  <script src="index.js"></script>
+  <script src="./JS/index.js"></script>
 </body>
 </html>
-
 
