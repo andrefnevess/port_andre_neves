@@ -243,12 +243,13 @@
         Respondo o mais rápido possível.
       </p>
 
-      <form>
-        <input type="text" placeholder="Nome Completo" required>
-        <input type="email" placeholder="E-mail" required>
-        <textarea placeholder="Como posso ajudar?" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+      <form id="contact-form" class="form-contato" method="POST" action="https://formspree.io/f/mkgzdbne" novalidate>
+                <input class="form-contato__input" type="text" name="nome" placeholder="Seu nome" required>
+                <input class="form-contato__input" type="email" name="email" placeholder="Seu e-mail" required>
+                <input class="form-contato__input" type="tel" name="whatsapp" placeholder="Seu WhatsApp (Opcional)">
+                <textarea class="form-contato__textarea" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                <button class="form-contato__botao" type="submit">Enviar</button>
+            </form>
 
 
     </section>
@@ -308,4 +309,5 @@
   <script src="index.js"></script>
 </body>
 </html>
+
 
